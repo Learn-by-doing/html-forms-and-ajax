@@ -1,0 +1,25 @@
+{
+  "name": "html-forms-and-ajax",
+  "version": "1.0.0",
+  "description": "A few examples of HTML forms in action",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Learn-by-doing/html-forms-and-ajax.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Learn-by-doing/html-forms-and-ajax/issues"
+  },
+  "homepage": "https://github.com/Learn-by-doing/html-forms-and-ajax#readme",
+  "dependencies": {
+    "express": "4.14.0",
+    "express-handlebars": "3.0.0",
+    "underscore": "1.8.3"
+  }
+}

@@ -1,0 +1,22 @@
+[
+	{
+		"title": "Building Your First Node Application",
+		"description": "In this eBook, we explorer beginning Node concepts and build three applications: A very simple Node application, a Node server and HTML site and an app to connect with the Instagram API and display the popular photos."
+	},
+	{
+		"title": "JavaScript and Node FUNdamentals",
+		"description": "A short read to brush up and refresh JavaScript and Node.js topics."
+	},
+	{
+		"title": "Pro Node.js for Developers",
+		"description": "Pro Node.js for Developers provides a comprehensive guide to this exciting new technology. We introduce you to Node – what it is, why it matters and how to set it up – before diving deeply into the key concepts and APIs that underpin its operation."
+	},
+	{
+		"title": "npm recipes",
+		"description": "There are over 70,000 modules on npm, so there's a wildly big number of opportunities for checking out how various npm modules can work together. This book showcases them one 'recipe' at a time."
+	},
+	{
+		"title": "Module Patterns",
+		"description": "The first short book of this series is a short introduction that sets the foundation of the next books to come. It shows what you can do with JavaScript and the Node module system to create and consume different types of modules: Singletons, Closure-based and prototype-based pseudo-classes, façades and others."
+	}
+]

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>HTML Forms and AJAX</title>
+</head>
+<body>
+
+	<h1>HTML Forms and AJAX</h1>
+
+	<hr>
+	<h2>Default HTML form behavior</h2>
+	<p>Submit the form below to have your browser perform an HTTP GET request to the server.</p>
+	<div>
+		<form id="default-form" action="/books/search" method="GET">
+			<input type="text" name="q" placeholder="Type your search terms here..">
+			<input type="submit" value="Search">
+		</form>
+	</div>
+
+	<hr>
+	<h2>HTML form using AJAX</h2>
+	<p>Submit the form below to have your browser perform an HTTP GET request to the server.</p>
+	<div>
+		<form id="ajax-form" action="/api/books/search" method="GET">
+			<input type="text" name="q" placeholder="Type your search terms here..">
+			<input type="submit" value="Search">
+		</form>
+	</div>
+	<pre id="results"></pre>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+
+			var ajaxForm = document.getElementById('ajax-form');
+			var resultsEl = document.getElementById('results');
+
+			ajaxForm.addEventListener('submit', function(evt) {
+
+				evt.preventDefault();
+
+				var action = ajaxForm.getAttribute('action');
+				var method = ajaxForm.getAttribute('method');
+				var q = document.querySelector('#ajax-form input[name="q"]').value;
+				var xhr = new XMLHttpRequest();
+
+				// Clear the results element:
+				resultsEl.innerHTML = '';
+
+				xhr.onreadystatechange = function() {
+
+					if (xhr.readyState === XMLHttpRequest.DONE) {
+
+						if (xhr.status === 200) {
+
+							try {
+								var books = JSON.parse(xhr.responseText);
+							} catch (error) {
+								console.log(error);
+							}
+
+							resultsEl.innerHTML = JSON.stringify(books, null, 2);
+
+						} else {
+							// An error happened.
+							console.log(xhr.responseText);
+						}
+					}
+				};
+
+				action += '?q=' + encodeURIComponent(q);
+
+				xhr.open(method.toUpperCase(), action, true);
+				xhr.send();
+			});
+		});
+	</script>
+
+</body>
+</html>
